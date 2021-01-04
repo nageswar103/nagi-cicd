@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nagesh-service
+  namespace: nagesh
+spec:
+  type: Loadbalancer
+  selector:
+    app: nagesh
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+
+
+
+
+
+
