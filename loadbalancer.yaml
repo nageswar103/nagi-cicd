@@ -4,16 +4,10 @@ metadata:
   name: nagesh-service
   namespace: nagesh
 spec:
-  type: Loadbalancer
+  type: LoadBalancer
   selector:
     app: nagesh
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-
-
-
-
-
-
