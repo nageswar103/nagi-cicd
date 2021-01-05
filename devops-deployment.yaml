@@ -1,0 +1,20 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: devops-deployment
+  namespace: devops
+spec:
+  selector:
+    matchLabels:
+      app: devops
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: devops
+    spec:
+      containers:
+      - name: devops
+        image: 349948765351.dkr.ecr.ap-south-1.amazonaws.com/devops:latest
+        ports:
+        - containerPort: 80
